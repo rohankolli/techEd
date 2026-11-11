@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>techEd: AI, explained plainly</title>
+  <meta name="description" content="A short, plain-language guide to what AI is, how it learns, and where it falls short.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#">techEd</a>
+    <nav>
+      <a href="#what">What it is</a>
+      <a href="#learn">How it learns</a>
+      <a href="#limits">Limits</a>
+      <a href="#glossary">Glossary</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>AI guesses what comes next.</h1>
+      <p class="lede">Most of what people call AI today is a very good guesser. Pick a sentence below and watch a toy model rank its next word.</p>
+
+      <div class="demo" aria-live="polite">
+        <div class="prompts" role="group" aria-label="Choose a sentence">
+          <button class="prompt is-active" data-key="sky">The sky is</button>
+          <button class="prompt" data-key="coffee">I'd like a cup of</button>
+          <button class="prompt" data-key="once">Once upon a</button>
+        </div>
+        <p class="sentence"><span id="sentence-text">The sky is</span> <span id="chosen" class="chosen">…</span></p>
+        <ul id="bars" class="bars"></ul>
+        <button id="pick" class="pick">Pick the next word</button>
+      </div>
+    </section>
+
+    <section id="what" class="block">
+      <h2>What AI is</h2>
+      <p>Artificial intelligence is software that learns patterns from examples instead of following rules a person wrote by hand. A spam filter that learned from millions of emails is AI. A calculator is not.</p>
+      <p>Large language models, the kind behind chat assistants, learned from huge amounts of text. They don't look facts up in a database. They predict likely words, one after another, based on everything they saw in training.</p>
+    </section>
+
+    <section id="learn" class="block">
+      <h2>How it learns</h2>
+      <ol class="steps">
+        <li><strong>Collect examples.</strong> Photos labeled "cat" or "dog," or billions of sentences.</li>
+        <li><strong>Guess.</strong> The model makes a prediction, mostly wrong at first.</li>
+        <li><strong>Measure the miss.</strong> Compare the guess to the right answer.</li>
+        <li><strong>Adjust.</strong> Nudge millions of internal numbers so the next guess is a little better.</li>
+        <li><strong>Repeat.</strong> Do this an enormous number of times until the guesses get good.</li>
+      </ol>
+    </section>
+
+    <section class="block uses">
+      <h2>Where you already use it</h2>
+      <dl>
+        <dt>Your phone keyboard</dt><dd>Suggests the next word as you type.</dd>
+        <dt>Maps</dt><dd>Predicts traffic and picks a faster route.</dd>
+        <dt>Streaming apps</dt><dd>Recommends shows based on what you and people like you watched.</dd>
+        <dt>Hospitals</dt><dd>Helps flag spots on scans for a doctor to review.</dd>
+      </dl>
+    </section>
+
+    <section id="limits" class="block limits">
+      <h2>Where it falls short</h2>
+      <p><strong>It can sound sure and still be wrong.</strong> Predicting likely words is not the same as checking facts.</p>
+      <p><strong>It inherits bias.</strong> If the training examples were skewed, the output will be too.</p>
+      <p><strong>It doesn't know what it doesn't know.</strong> Anything after its training data, or outside it, is a blind spot.</p>
+      <p>The habit worth building: treat AI output like a confident first draft from a stranger. Useful, worth checking.</p>
+    </section>
+
+    <section id="glossary" class="block">
+      <h2>Glossary</h2>
+      <details><summary>Model</summary><p>The trained program itself: a big set of numbers that turns inputs into predictions.</p></details>
+      <details><summary>Training data</summary><p>The examples a model learned from. Its quality shapes everything the model does.</p></details>
+      <details><summary>Neural network</summary><p>A model made of layers of simple math units loosely inspired by brain cells.</p></details>
+      <details><summary>Prompt</summary><p>The text you give a language model to respond to.</p></details>
+      <details><summary>Hallucination</summary><p>When a model states something false as if it were true.</p></details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>techEd is a small learning project. Corrections welcome on <a href="https://github.com/rohankolli/techEd">GitHub</a>.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
